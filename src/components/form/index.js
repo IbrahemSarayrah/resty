@@ -1,6 +1,7 @@
 
 import './form.scss';
 import { useState } from "react";
+import axios from 'axios';
 
 function Form(props) {
 
@@ -10,21 +11,28 @@ function Form(props) {
 
   // https://pokeapi.co/api/v2/pokemon
 
-  const handleSubmit = e => {
+ 
+   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
       method: method,
       url: url,
     };
-    props.handleApiCall(formData);
+
+    const getData =  await axios({
+      method: method,
+      url: url,
+    });
+
+    props.handleApiCall(formData,getData);
   }
 
-  const handleMethod = (e)=>{
+  const handleMethod = (e) => {
     setMethod(e.target.id);
     setshowTextArea(false);
   }
 
-  const handleUrl = (e)=> {
+  const handleUrl = (e) => {
     setUrl(e.target.value)
   }
 
@@ -48,10 +56,7 @@ function Form(props) {
           <span id="put" onClick={textAreaHandler}>PUT</span>
           <span id="delete" onClick={textAreaHandler}>DELETE</span>
         </label>
-        {showTextArea && (
-          <textarea rows="20" cols="45"></textarea>
-        )
-        }
+        {showTextArea && <textarea rows="4" cols="50"></textarea>}
       </form>
     </>
   );

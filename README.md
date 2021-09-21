@@ -18,11 +18,11 @@
 
 * LAB - 27 [codesandbox.io deployment link](https://pf7s0.csb.app/)
 
-* LAB - 28 pull request : []()
+* LAB - 28 pull request : [https://github.com/IbrahemSarayrah/resty/pull/6](https://github.com/IbrahemSarayrah/resty/pull/6)
 
-* LAB - 28 [codesandbox.io deployment code]()
+* LAB - 28 [codesandbox.io deployment code](https://codesandbox.io/s/festive-thunder-f0pwf)
 
-* LAB - 28 [codesandbox.io deployment link]()
+* LAB - 28 [codesandbox.io deployment link](https://f0pwf.csb.app/)
 
 ### Running the app
 

@@ -1,13 +1,13 @@
 
 import './form.scss';
 import { useState } from "react";
-import axios from 'axios';
 
 function Form(props) {
 
   const [method, setMethod] = useState('get');
   const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon');
   const [showTextArea, setshowTextArea] = useState(false);
+  const [requestTextAreaBody, setRequestTextAreaBody] = useState("");
 
   // https://pokeapi.co/api/v2/pokemon
 
@@ -17,17 +17,13 @@ function Form(props) {
     const formData = {
       method: method,
       url: url,
+      requestTextAreaBody:requestTextAreaBody,
     };
 
-    const getData =  await axios({
-      method: method,
-      url: url,
-    });
-
-    props.handleApiCall(formData,getData);
+    props.handleApiCall(formData);
   }
 
-  const handleMethod = (e) => {
+  const handleGetMethod = (e) => {
     setMethod(e.target.id);
     setshowTextArea(false);
   }
@@ -36,9 +32,24 @@ function Form(props) {
     setUrl(e.target.value)
   }
 
-  const textAreaHandler = (e) => {
+  const handelPostMethod = (e) => {
     setshowTextArea(true);
     setMethod(e.target.id);
+  };
+
+  const handelPutMethod = (e) => {
+    setshowTextArea(true);
+    setMethod(e.target.id);
+  };
+
+  const handelDeleteMethod = (e) => {
+    setshowTextArea(false);
+    setMethod(e.target.id);
+  };
+
+  const textAreaHandler = (e) => {
+    let textAreaData = e.target.value;
+    setRequestTextAreaBody(textAreaData);
   };
 
 
@@ -51,12 +62,12 @@ function Form(props) {
           <button type="submit">GO!</button>
         </label>
         <label className="methods">
-          <span id="get" onClick={handleMethod}>GET</span>
-          <span id="post" onClick={textAreaHandler}>POST</span>
-          <span id="put" onClick={textAreaHandler}>PUT</span>
-          <span id="delete" onClick={textAreaHandler}>DELETE</span>
+          <span id="get" onClick={handleGetMethod}>GET</span>
+          <span id="post" onClick={handelPostMethod}>POST</span>
+          <span id="put" onClick={handelPutMethod}>PUT</span>
+          <span id="delete" onClick={handelDeleteMethod}>DELETE</span>
         </label>
-        {showTextArea && <textarea rows="4" cols="50"></textarea>}
+        {showTextArea && <textarea rows="4" cols="50" onChange={textAreaHandler}></textarea>}
       </form>
     </>
   );

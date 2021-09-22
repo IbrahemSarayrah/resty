@@ -24,6 +24,12 @@
 
 * LAB - 28 [codesandbox.io deployment link](https://f0pwf.csb.app/)
 
+* LAB - 29 pull request : []()
+
+* LAB - 29 [codesandbox.io deployment code]()
+
+* LAB - 29 [codesandbox.io deployment link]()
+
 ### Running the app
 
 >

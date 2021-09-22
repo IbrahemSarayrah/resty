@@ -5,7 +5,7 @@ import Loading from '../Loading';
 
 function Results(props) {
     return (
-      <section>
+      <dev className="section">
         {/* <pre>{props.data ? JSON.stringify(props.data, undefined, 2) : null}</pre> */}
         {props.data ? <div>
           <h2>Headers</h2>
@@ -13,7 +13,7 @@ function Results(props) {
           <h2>Results</h2>
           <JSONPretty id="json-pretty" data={props.data ? props.data.data : null}></JSONPretty>
         </div>: <Loading/>}
-      </section>
+      </dev>
     );
 }
 

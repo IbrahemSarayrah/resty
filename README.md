@@ -24,11 +24,11 @@
 
 * LAB - 28 [codesandbox.io deployment link](https://f0pwf.csb.app/)
 
-* LAB - 29 pull request : []()
+* LAB - 29 pull request : [https://github.com/IbrahemSarayrah/resty/pull/8](https://github.com/IbrahemSarayrah/resty/pull/8)
 
-* LAB - 29 [codesandbox.io deployment code]()
+* LAB - 29 [codesandbox.io deployment code](https://codesandbox.io/s/relaxed-yalow-g4hoz)
 
-* LAB - 29 [codesandbox.io deployment link]()
+* LAB - 29 [codesandbox.io deployment link](https://g4hoz.csb.app/)
 
 ### Running the app
 
